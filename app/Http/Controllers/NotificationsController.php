@@ -36,7 +36,9 @@ class NotificationsController extends Controller
               'message'=>'No hay registros'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -84,7 +86,9 @@ class NotificationsController extends Controller
                 ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -111,7 +115,9 @@ class NotificationsController extends Controller
               'message'=>'La notificacion no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -168,7 +174,9 @@ class NotificationsController extends Controller
                 ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -194,6 +202,8 @@ class NotificationsController extends Controller
               'message'=>'La notificacion no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 }

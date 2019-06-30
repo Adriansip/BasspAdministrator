@@ -28,7 +28,9 @@ class AuthMiddleware
               'message'=>'El usuario no esta identificado.',
               'request' => $request
             ];
-            return response()->json($data, $data['code']);
+            $response=[];
+            array_push($response, $data);
+            return $response;
         }
     }
 }

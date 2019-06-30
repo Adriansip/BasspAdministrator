@@ -36,7 +36,9 @@ class PlataformController extends Controller
             'message'=>'No hay registros'
           ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**

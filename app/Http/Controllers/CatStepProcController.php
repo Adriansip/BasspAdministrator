@@ -36,7 +36,9 @@ class CatStepProcController extends Controller
           'message'=>'No hay registros'
         ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -86,7 +88,9 @@ class CatStepProcController extends Controller
                   ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -113,7 +117,9 @@ class CatStepProcController extends Controller
               'message'=>'La funcion no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -174,7 +180,9 @@ class CatStepProcController extends Controller
                 ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -203,6 +211,8 @@ class CatStepProcController extends Controller
               'message'=>'La funcion no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 }

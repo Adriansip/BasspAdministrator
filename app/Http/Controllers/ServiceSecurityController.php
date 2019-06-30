@@ -36,7 +36,9 @@ class ServiceSecurityController extends Controller
               'message'=>'No hay registros'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -83,7 +85,9 @@ class ServiceSecurityController extends Controller
                 ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -110,7 +114,9 @@ class ServiceSecurityController extends Controller
             'message'=>'La licencia no se encuentra en la base de datos'
           ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -166,7 +172,9 @@ class ServiceSecurityController extends Controller
                 ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -192,6 +200,8 @@ class ServiceSecurityController extends Controller
               'message'=>'La licencia no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 }
