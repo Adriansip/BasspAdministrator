@@ -59,7 +59,9 @@ class JwtAuth
         }
 
         //Devolver los datos decodificados o el token
-        return $data;
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     public function checkToken($jwt, $getIdentity=false)
@@ -77,11 +79,15 @@ class JwtAuth
         if (!empty($decoded) && is_object($decoded) && isset($decoded->userId)) {
             $auth=true;
             if ($getIdentity) {
-                return $decoded;
+                $response=[];
+                array_push($response, $decoded);
+                return $response;
             }
         } else {
             $auth=false;
         }
-        return $auth;
+        $response=[];
+        array_push($response, $auth);
+        return $response;
     }
 }

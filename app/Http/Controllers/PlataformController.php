@@ -38,7 +38,7 @@ class PlataformController extends Controller
         }
         $response=[];
         array_push($response, $data);
-        return $response;
+        return response()->json($response, $response[0]['code']);
     }
 
     /**
