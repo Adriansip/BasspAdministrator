@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Response;
-use App\Models\User;
 use App\Models\UserPreference;
+use App\Models\Respuesta;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -38,7 +38,9 @@ class UserController extends Controller
             'message'=>'No hay registros'
           ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -119,7 +121,9 @@ class UserController extends Controller
             'message'=>'Algo salio mal durante la transaccion: '.$ex
           ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -146,7 +150,9 @@ class UserController extends Controller
               'message'=>'El usuario no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -208,7 +214,9 @@ class UserController extends Controller
                 ];
             }
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     /**
@@ -237,7 +245,9 @@ class UserController extends Controller
               'message'=>'El usuario no se encuentra en la base de datos'
             ];
         }
-        return response()->json($data, $data['code']);
+        $response=[];
+        array_push($response, $data);
+        return $response;
     }
 
     public function login(Request $request)
@@ -268,6 +278,8 @@ class UserController extends Controller
                 $signup=$jwtAuth->signUp($request->userEmail, $request->userPwd, true);
             }
         }
-        return response()->json($signup, 200);
+        $response=[];
+        array_push($response, $signup);
+        return $response;
     }
 }

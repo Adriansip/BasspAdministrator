@@ -3,7 +3,7 @@ namespace App\Helpers;
 
 use Firebase\JWT\JWT;
 use Illuminate\Support\Facades\DB;
-use App\models\User;
+use App\Models\User;
 
 class JwtAuth
 {
@@ -28,7 +28,6 @@ class JwtAuth
 
         if ($signup) {
             //Generar el token con los datos del usuario
-            //Generar el token con los datos del Usuario
             $token = [
               'userId' => $user->userId,
               'userName'=>$user->userName,
